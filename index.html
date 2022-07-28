@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>星空与日食</title>
+		<style>
+			*{margin: 0 auto;padding: 0;}/*统配forwards是只循环一次*/
+			body{background-color: #030613;}/*背景颜色*/
+			body:before{/*背景里面加几个小圆点*/
+				content:'';width: 4px;height: 4px;background-color: #fff;position: absolute;border-radius: 50%;animation: before 5s linear 0s infinite;
+				box-shadow: 10vw 1vh #fff, 14vw 29vh 2px #FFF, 23vw 34vh 1px #FFF, 1vw 99vh 1px #FFF, 20vw 80vh #FFF, 90vw 10vh 2px #fff, 55vw 9vh #FFF, 24vw 4vh 1px #FFF, 50vw 99vh 1px #FFF, 74vw 40vh 1px #FFF, 80vw 9vh 1px #FFF, 20vw 80vh #FFF, 85vw 78vh #fff;}
+			@keyframes before{/*小圆点的变大变小动画*/
+				0%{width: 4px;height: 4px;}
+				50%{width: 8px;height: 8px;}
+				100%{width: 4px;height: 4px;}
+			}
+			.sun{/*太阳*/
+				width: 200px;height: 200px;background-color: #fff;position: absolute;left: calc(50% - 100px);top: calc(50% - 100px);border-radius: 50%;
+				animation: sun 10s linear 0s infinite;
+				box-shadow: 0 0 60px gold, 0 0 100px #b9a018, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+			.moom{/*月亮*/
+				width: 50px;height: 50px;background-color: #000000;box-shadow: inset 5px 1px 10px -8px #d4d4d6;border-radius: 50%;position: absolute;left: calc(100% - 50px);top:30%;animation: moom 10s linear 0s infinite;}
+			@keyframes moom{/*月亮移动的动画*/
+				0%{left: calc(100% - 50px);top:30%;}
+				45%{left: calc(50% - 100px);top: calc(50% - 100px);width: 200px;height: 200px;box-shadow: inset 20px 1px 35px -15px #d4d4d6;}
+				55%{left: calc(50% - 100px);top: calc(50% - 100px);box-shadow:inset -20px 1px 35px -15px #d4d4d6;width: 200px;height: 200px;}
+				100%{left:0px;top:30%;box-shadow: inset -5px 1px 10px -8px #d4d4d6;width: 50px;height: 50px;}
+			}
+			@keyframes sun{/*太阳相应月亮的移动*/
+				0%{box-shadow: 0 0 60px gold, 0 0 100px #b9a018, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+				33%{box-shadow: 0 0 60px gold, 0 0 100px #b9a018, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+				45%{box-shadow: 0 0 50px #e30000, 0 0 0px #b91818, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+				55%{box-shadow: 0 0 50px #e30000, 0 0 0px #b91818, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+				66%{box-shadow: 0 0 60px gold, 0 0 100px #b9a018, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+				100%{box-shadow: 0 0 60px gold, 0 0 100px #b9a018, inset 0 5px 35px 53px #dbdbdb, inset 48px 8px 34px 25px #c4c4c4;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sun"></div>
+		<div class="moom"></div>
+	</body>
+</html>
